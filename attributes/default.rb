@@ -62,6 +62,15 @@ end
 default['mongodb3']['user'] = mongo_user
 default['mongodb3']['group'] = mongo_group
 
+# Admin user
+default['mongodb3']['admin']['username'] = 'admin'
+default['mongodb3']['admin']['password'] = 'admin2'
+default['mongodb3']['admin']['roles'] = %w(root)
+default['mongodb3']['admin']['database'] = 'admin'
+
+# Regular users
+default['mongodb3']['users'] = []
+
 # Mongod config file
 default['mongodb3']['mongod']['config_file'] = '/etc/mongod.conf'
 
@@ -73,6 +82,10 @@ default['mongodb3']['config']['key_file_content'] = nil
 
 # Key server
 default['mongodb3']['keyserver'] = 'hkp://keyserver.ubuntu.com:80'
+
+# Gems required for user management
+default['mongodb3']['ruby_gems']['mongo'] = nil
+default['mongodb3']['ruby_gems']['bson_ext'] = nil
 
 # Mongod config
 # The default value of the attribute is referred to the MongoDB documentation.
