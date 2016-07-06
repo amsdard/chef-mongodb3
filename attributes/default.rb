@@ -64,7 +64,7 @@ default['mongodb3']['group'] = mongo_group
 
 # Admin user
 default['mongodb3']['admin']['username'] = 'admin'
-default['mongodb3']['admin']['password'] = 'admin2'
+default['mongodb3']['admin']['password'] = 'admin'
 default['mongodb3']['admin']['roles'] = %w(root)
 default['mongodb3']['admin']['database'] = 'admin'
 
