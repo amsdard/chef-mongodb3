@@ -82,6 +82,20 @@ template node['mongodb3']['mongod']['config_file'] do
   helpers Mongodb3Helper
 end
 
+file '/sys/kernel/mm/transparent_hugepage/defrag' do
+  content 'never'
+  mode '0644'
+  owner 'root'
+  group 'root'
+end
+
+file '/sys/kernel/mm/transparent_hugepage/enabled' do
+  content 'never'
+  mode '0644'
+  owner 'root'
+  group 'root'
+end
+
 # Start the mongod service
 service 'mongod' do
   case node['platform']
