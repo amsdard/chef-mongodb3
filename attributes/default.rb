@@ -213,6 +213,9 @@ default['mongodb3']['config']['mongod']['auditLog']['filter'] = nil
 default['mongodb3']['config']['mongod']['snmp']['subagent'] = nil
 default['mongodb3']['config']['mongod']['snmp']['master'] = nil
 
+# Replicaset config
+default['mongodb3']['config']['replicaset']['members'] = [] # {_id: 0, host: 'node1:27017', buildIndexes: true, priority: 0.8, arbiterOnly: false, slaveDelay: 0, hidden: false, votes: 1, tags: {}}
+
 # Mongos config
 default['mongodb3']['config']['mongos']['net']['port'] = 27018 # default : 27017
 default['mongodb3']['config']['mongos']['net']['bindIp'] = '127.0.0.1' # default : '0.0.0.0'

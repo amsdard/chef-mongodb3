@@ -47,7 +47,7 @@ def get_client
 
   config = node['mongodb3']['config']['mongod']
   client = Mongo::Client.new(
-      'mongodb://%s:%s' % [config['net']['bindIp'] || '127.0.0.1', config['net']['port']],
+      'mongodb://%s:%s' % ['127.0.0.1', config['net']['port']],
       :database => 'admin',
       :connect => :direct
   )
